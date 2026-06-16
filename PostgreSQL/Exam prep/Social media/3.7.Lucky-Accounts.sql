@@ -1,0 +1,17 @@
+SELECT
+	CONCAT(a.id, ' ', a.username) AS id_username,
+	a.email
+FROM
+	accounts AS a
+JOIN
+	accounts_photos AS ap
+ON
+	ap.account_id = a.id
+JOIN
+	photos AS p
+ON
+	ap.photo_id = p.id
+WHERE
+	a.id = p.id
+ORDER BY
+	a.id ASC;
